@@ -1,12 +1,9 @@
 # arduino.buhler.coffeeCloud
 Luminosity sensor for coffee machine ready light
 <hr>
-
-HANA IOT services
-
-Info source:
-<hr>
 <h1>SAP HANA</h1>
+<h2>SAP Hana Trial</h2>
+https://account.hanatrial.ondemand.com
 
 <h2>SAP HANA Cloud Documentation</h2>
 <h3>SAP HANA Cloud Platform Internet of Things Services</h3>
