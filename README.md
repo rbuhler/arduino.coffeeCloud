@@ -7,27 +7,32 @@ An Arduino UNO connected to a luminosity sensor checks for the "ready light" to 
 From time to time the coffee machine status is sent to the cloud and from there the user can check such status in a UI5 web page.
 
 ## SAP HANA
-### SAP Hana Trial
-https://account.hanatrial.ondemand.com
+### SAP HANA Cloud Documentation and References
+**Youtube**
+__SAP HANA Academy - IoT Services: Getting Started [2.2.1] :__ https://youtu.be/EiIInSB8pFk
 
-### SAP HANA Cloud Documentation
-#### SAP HANA Cloud Platform Internet of Things Services
+**SAP Hep**
 https://help.hana.ondemand.com/iot/frameset.htm?ad829c660e584c329200022332f04d00.html
 
+**Open Source & SAP**
+http://sap.github.io/index.html?sort=asc&filter=featured
+
+### SAP Hana Trial
+https://account.hanatrial.ondemand.com
 #### Internet of Things Services
 **Message**
-_readyLight_
-**ID:** 75b60827bafbff23e216
+_luminositySensor_
+**ID:** ba2434ef5c2b4bc8de83
 
 **Device Type**
-_luminositySensor_
-**ID:** c58066b6aa56063ac0b4
-**Device Registration Token:** 13d88b9f91293cfa9590d53e36bb55
+_arduino_
+**ID:** 896f81d5a9f94374f154
+**Device Registration Token:** 66bf280b7b66e6239f0ddd782d4e2ee
 
 **Device**
-_arduinoUnoLuminositySensor_
-**Token:** fee5a590a457cdf81848a331750498b
-**ID:** f73d52ec-2e89-4db0-8ed2-74011788c7f1
+_uno_
+**Token:** 15ece4ba7d4b2f537c7eb6435db4fdf
+**ID:** c15203e5-9530-4b8c-be0f-ee6b9f024496
 
 **Deploy the Message Management Service**
 **Host:** https://hanatrial.ondemand.com
