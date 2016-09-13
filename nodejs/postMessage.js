@@ -34,8 +34,8 @@
         method: "POST",
         json: true,
         headers:{
-            "content-type"  : "application/json",
-            "Authorization" : "bearer c6eda4694dcc36a6e7ed3f2c34563d6"
+            "Authorization" : "Bearer c6eda4694dcc36a6e7ed3f2c34563d6",
+            "content-type"  : "application/json"
         },
         body:{
             requestData
