@@ -1,0 +1,38 @@
+[Internet of Things Services Cockpit]
+(https://iotcockpitiotservices-p1941020166trial.hanatrial.ondemand.com/com.sap.iotservices.cockpit/)
+
+[Message Management Service Cockpit]
+(https://iotmmsp1941020166trial.hanatrial.ondemand.com/com.sap.iotservices.mms/)
+
+
+
+account details - P######
+
+
+**Postman Rest Client**
+0. Enter the device ID at the end of the URL;
+1. Authorization: OAuth2;
+2. Headers: 
+*	Authorization - Bearer 2946c09c57262d7ea9331dfddb2ead
+*	Content Type - application/json
+3. Change from Get to Post;
+4. Body:
+````
+{
+        "mode":"sync",
+        "messageType":"ba2434ef5c2b4bc8de83",
+        "messages":[
+            {
+                "sensor":"sensor1",
+                "value":"20",
+                "timestamp":1413191650
+            	
+            }
+        ]
+}
+````
+5. Click Send.
+
+DEVICES
+uno - Token: 2946c09c57262d7ea9331dfddb2ead
+nodeJS - Token: c6eda4694dcc36a6e7ed3f2c34563d6

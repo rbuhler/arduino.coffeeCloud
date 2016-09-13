@@ -10,64 +10,50 @@ From time to time the coffee machine status is sent to the cloud and from there 
 
 ## SAP HANA
 ### SAP HANA Cloud Documentation and References
-**Youtube**
 
->[Internet of Things (IoT) Services](https://www.youtube.com/playlist?list=PLkzo92owKnVxzjoxwJdaa400E_UqkzE8J)
+[Youtube - Internet of Things (IoT) Services](https://www.youtube.com/playlist?list=PLkzo92owKnVxzjoxwJdaa400E_UqkzE8J)
 
-**SAP Hep**
-https://help.hana.ondemand.com/iot/frameset.htm?ad829c660e584c329200022332f04d00.html
+[Help - SAP HANA Cloud Platform Internet of Things Services](https://help.hana.ondemand.com/iot/frameset.htm?ad829c660e584c329200022332f04d00.html)
 
-**Open Source & SAP**
-http://sap.github.io/index.html?sort=asc&filter=featured
+[SAP GitHub - Open Source & SAP](http://sap.github.io/index.html?sort=asc&filter=featured)
 
 ### SAP Hana Trial
 https://account.hanatrial.ondemand.com
+
 #### Internet of Things Services
-**Message Type**
-_luminositySensor_
 
-**ID:** ba2434ef5c2b4bc8de83
+Atrribute        | Value
+-----------------|
+Message Type     | _luminositySensor_ 
+Device Type      | _arduino_
+Device           | _uno_ 
 
-**Device Type**
-_arduino_
+## Google Chrome add-on Postman
+[Chrome Web Store](https://www.google.com.br/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&sqi=2&ved=0ahUKEwiH-ejl9YrPAhXLIpAKHWpVDBkQFggoMAA&url=https%3A%2F%2Fchrome.google.com%2Fwebstore%2Fdetail%2Fpostman%2Ffhbjgbiflinjbdggehcddcbncdddomop%3Fhl%3Den&usg=AFQjCNE_Yq59TT1ZExzJ68FTldg4ho_lGw&sig2=s2A-KDOCEgGroyvXH0nKHA&bvm=bv.132479545,d.Y2I)
 
-**ID:** 896f81d5a9f94374f154
-
-**Device Registration Token:** 66bf280b7b66e6239f0ddd782d4e2ee
-
-**Device**
-_uno_
-
-**Token:** 15ece4ba7d4b2f537c7eb6435db4fdf
-
-**ID:** c15203e5-9530-4b8c-be0f-ee6b9f024496
-
-**Deploy the Message Management Service**
-
-**Host:** https://hanatrial.ondemand.com
-
-**Account ID:** p1941020166trial
-
-**User Name:** P1941020166
-
-**HTTP API**
-
-**End Point:** https://iotmmsp1941020166trial.hanatrial.ondemand.com/com.sap.iotservices.mms/v1/api/http/data/c15203e5-9530-4b8c-be0f-ee6b9f024496
-
-**Message:**
-```
+**Postman Rest Client**
+1. Enter the device ID at the end of the URL; _(Send and receive messages through HTTP)_
+2. Authorization: OAuth2;
+3. Headers: 
+*   Authorization - Bearer **<Device Token>**
+*   Content Type - application/json
+4. Change from Get to Post;
+5. Body:
+````
 {
-    "mode":"sync",
-    "messageType":"ba2434ef5c2b4bc8de83",
-    "messages":[
-        {
-            "sensor":"sensor1",
-            "value":"20",
-            "timestamp":1473460985
-        }
-    ]
+        "mode":"sync",
+        "messageType":"<Message ID>",
+        "messages":[
+            {
+                "sensor":"sensor1",
+                "value":"20",
+                "timestamp":1413191650
+                
+            }
+        ]
 }
-```
+````
+6. Click Send.
 
 ## NODE JS
 * [Arduino and NodeJS Communication With Serial Ports](http://danialk.github.io/blog/2014/04/12/arduino-and-nodejs-communication-with-serial-ports/)
