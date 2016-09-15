@@ -1,3 +1,7 @@
+USER
+ID: P1941020166
+ACCOUNT: p1941020166trial
+
 [Internet of Things Services Cockpit]
 (https://iotcockpitiotservices-p1941020166trial.hanatrial.ondemand.com/com.sap.iotservices.cockpit/)
 
