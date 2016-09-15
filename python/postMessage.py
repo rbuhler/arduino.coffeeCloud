@@ -17,8 +17,6 @@ def main( sAccount, sDevice, sToken, sMsgType, sProxy ):
 # sMsgType = sys.argv[4]
 # sProxy   = sys.argv[5]
 
-
-
 # use with or without proxy
 	http = urllib3.PoolManager(
 		cert_reqs='CERT_REQUIRED', # Force certificate check.
@@ -38,7 +36,7 @@ def main( sAccount, sDevice, sToken, sMsgType, sProxy ):
 	headers['Content-Type'] = 'application/json;charset=utf-8'
 
 	# send message of Message Type 'm0t0y0p0e1' and the corresponding payload layout that you defined in the IoT Services Cockpit
-	body='{"mode":"async", "messageType":"' + sMsgType + '", "messages":[{"sensor":"python", "value":"96", "timestamp":1413191650}]}'
+	body='{"mode":"async", "messageType":"' + sMsgType + '", "messages":[{"sensor":"python", "value":"95", "timestamp":1413191650}]}'
 
 	try:
 		r = http.urlopen('POST', url, body=body, headers=headers)
