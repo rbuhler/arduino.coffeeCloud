@@ -7,3 +7,17 @@ sMsgType = 'ba2434ef5c2b4bc8de83'
 sProxy   = 'http://proxy:8080'
 
 postMessage.main( sAccount, sDevice, sToken, sMsgType, sProxy)
+
+
+argv{
+	"account"	: "Edm.String",
+	"device"   	: "Edm.String",
+	"devToken" 	: "Edm.String",
+	"messType"	: "Edm.String",
+	"proxy"		: "Edm.String",
+	"messages"	:[{
+					"sensor"	:"Edm.String", 
+					"value" 	:"Edm.Int", 
+					"timestamp"	:"Edm.DateTime"
+				}]
+	}
