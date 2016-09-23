@@ -1,3 +1,19 @@
+# -------------------------------------------
+# SCRIPT INTERFACE
+# -------------------------------------------
+# argv{
+# 	"account"	: "Edm.String",
+# 	"device"   	: "Edm.String",
+# 	"devToken" 	: "Edm.String",
+# 	"messType"	: "Edm.String",
+# 	"proxy"		: "Edm.String",
+# 	"messages"	:[{
+# 					"sensor"	:"Edm.String", 
+# 					"value" 	:"Edm.Int", 
+# 					"timestamp"	:"Edm.DateTime"
+# 				}]
+# 	}
+
 import urllib3
 import certifi
 import sys
