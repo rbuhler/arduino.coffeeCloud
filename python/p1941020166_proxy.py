@@ -1,7 +1,9 @@
-import postMessage
+import random
+
 import datetime
 import calendar
-import random
+
+import postMessage
 
 # DEVICE IDENTIFICATION
 sAccount = 'p1941020166trial'
@@ -25,15 +27,15 @@ dDate_UTC   = calendar.timegm( dDate_tuple )
 
 # PREPARE THE CALL'S PARAMETERS
 sMessage = json.dumps({'argv':{
-								"account"  : sAccount,
-								"device"   : sDevice,
-								"devToken" : sToken,
-								"messType" : sMsgType,
-								"proxy"    : sProxy,
-								"messages" : [{
-											"sensor"    : sSensor, 
-											"value"     : iValue, 
-											"timestamp" : dDate_UTC
+								'account'  : sAccount,
+								'device'   : sDevice,
+								'devToken' : sToken,
+								'messType' : sMsgType,
+								'proxy'    : sProxy,
+								'messages' : [{
+											'sensor'    : sSensor, 
+											'value'     : iValue, 
+											'timestamp' : dDate_UTC
 											}]
 								}
 # POST THE MESSAGE TO HANA IOT INFRASTRUCTURE

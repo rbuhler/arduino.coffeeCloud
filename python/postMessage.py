@@ -25,7 +25,8 @@ import sys
 # Therefore, install urllib3 and certifi and specify the PoolManager as below to enforce certificate check
 # See https://urllib3.readthedocs.org/en/latest/security.html for more details
 
-def main( sAccount, sDevice, sToken, sMsgType, sProxy ):
+# def main( sAccount, sDevice, sToken, sMsgType, sProxy ):
+def main( sMessage ):
 
 # sAccount = sys.argv[1]
 # sDevice  = sys.argv[2]
