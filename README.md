@@ -52,10 +52,11 @@ Device           | _uno_
         ]
 }
 ````
-6. Click Send.
+6. Click Send.____
 
 ## Python
 [Python Software Foundation](https://www.python.org/)
+[Python Object Oriented](https://www.tutorialspoint.com/python/pdf/python_classes_objects.pdf)
 
 ## NODE JS
 * [Arduino and NodeJS Communication With Serial Ports](http://danialk.github.io/blog/2014/04/12/arduino-and-nodejs-communication-with-serial-ports/)
