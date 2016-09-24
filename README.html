@@ -1015,52 +1015,69 @@ body .markdown-body
   }
 }
 </style><title>README</title></head><body><article class="markdown-body"><h1 id="arduinobuhlercoffeecloud"><a name="user-content-arduinobuhlercoffeecloud" href="#arduinobuhlercoffeecloud" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>arduino.buhler.coffeeCloud</h1>
-<p>The main idea here is to present an implementation of an IoT project.</p>
-<p><strong>The problem</strong><br />
-Monitor the &ldquo;ready light&rdquo; of a coffee machine and advise the user when the coffee is ready.</p>
-<p><strong>The solution</strong><br />
+<h2 id="hana-iot-services"><a name="user-content-hana-iot-services" href="#hana-iot-services" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Hana IoT Services</h2>
+<h3 id="sap-hana-cloud-platform"><a name="user-content-sap-hana-cloud-platform" href="#sap-hana-cloud-platform" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>SAP Hana Cloud Platform</h3>
+<p><a href="https://account.hanatrial.ondemand.com">SAP Hana Cloud Platform Cockpit</a></p>
+<h3 id="source-of-information"><a name="user-content-source-of-information" href="#source-of-information" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Source of information</h3>
+<p><a href="https://www.youtube.com/playlist?list=PLkzo92owKnVxzjoxwJdaa400E_UqkzE8J">Youtube - Internet of Things (IoT) Services</a><br />
+<a href="https://help.hana.ondemand.com/iot/frameset.htm?ad829c660e584c329200022332f04d00.html">Help - SAP HANA Cloud Platform Internet of Things Services</a><br />
+<a href="http://sap.github.io/index.html?sort=asc&amp;filter=featured">SAP GitHub - Open Source &amp; SAP</a></p>
+<h2 id="draft"><a name="user-content-draft" href="#draft" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Draft</h2>
+<p>The main idea here is to present an implementation of an IoT project.<br />
+<strong>The problem</strong><br />
+Monitor the &ldquo;ready light&rdquo; of a coffee machine and advise the user when the coffee is ready.<br />
+<strong>The solution</strong><br />
 An Arduino UNO connected to a luminosity sensor checks for the &ldquo;ready light&rdquo; to turn on (meaning time for coffee).<br />
 From time to time the coffee machine status is sent to the cloud and from there the user can check such status in a UI5 web page.</p>
-<h2 id="sap-hana"><a name="user-content-sap-hana" href="#sap-hana" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>SAP HANA</h2>
-<h3 id="sap-hana-cloud-documentation-and-references"><a name="user-content-sap-hana-cloud-documentation-and-references" href="#sap-hana-cloud-documentation-and-references" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>SAP HANA Cloud Documentation and References</h3>
-<p><a href="https://www.youtube.com/playlist?list=PLkzo92owKnVxzjoxwJdaa400E_UqkzE8J">Youtube - Internet of Things (IoT) Services</a></p>
-<p><a href="https://help.hana.ondemand.com/iot/frameset.htm?ad829c660e584c329200022332f04d00.html">Help - SAP HANA Cloud Platform Internet of Things Services</a></p>
-<p><a href="http://sap.github.io/index.html?sort=asc&amp;filter=featured">SAP GitHub - Open Source &amp; SAP</a></p>
-<h3 id="sap-hana-trial"><a name="user-content-sap-hana-trial" href="#sap-hana-trial" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>SAP Hana Trial</h3>
-<p><a href="https://account.hanatrial.ondemand.com">https://account.hanatrial.ondemand.com</a></p>
 <h4 id="internet-of-things-services"><a name="user-content-internet-of-things-services" href="#internet-of-things-services" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Internet of Things Services</h4>
-<p><strong>Message Type</strong></p>
-<p><em>luminositySensor</em></p>
-<p><strong>ID:</strong> ba2434ef5c2b4bc8de83</p>
-<p><strong>Device Type</strong></p>
-<p><em>arduino</em></p>
-<p><strong>ID:</strong> 896f81d5a9f94374f154</p>
-<p><strong>Device Registration Token:</strong> 66bf280b7b66e6239f0ddd782d4e2ee</p>
-<p><strong>Device</strong></p>
-<p><em>uno</em></p>
-<p><strong>Token:</strong> 15ece4ba7d4b2f537c7eb6435db4fdf</p>
-<p><strong>ID:</strong> c15203e5-9530-4b8c-be0f-ee6b9f024496</p>
-<p><strong>Deploy the Message Management Service</strong></p>
-<p><strong>Host:</strong> <a href="https://hanatrial.ondemand.com">https://hanatrial.ondemand.com</a></p>
-<p><strong>Account ID:</strong> p1941020166trial</p>
-<p><strong>User Name:</strong> P1941020166</p>
-<p><strong>HTTP API</strong></p>
-<p><strong>End Point:</strong> <a href="https://iotmmsp1941020166trial.hanatrial.ondemand.com/com.sap.iotservices.mms/v1/api/http/data/c15203e5-9530-4b8c-be0f-ee6b9f024496">https://iotmmsp1941020166trial.hanatrial.ondemand.com/com.sap.iotservices.mms/v1/api/http/data/c15203e5-9530-4b8c-be0f-ee6b9f024496</a></p>
-<p><strong>Message:</strong><br />
-<pre><code>{
-    &quot;mode&quot;:&quot;sync&quot;,
-    &quot;messageType&quot;:&quot;ba2434ef5c2b4bc8de83&quot;,
-    &quot;messages&quot;:[
-        {
-            &quot;sensor&quot;:&quot;sensor1&quot;,
-            &quot;value&quot;:&quot;20&quot;,
-            &quot;timestamp&quot;:1473460985
-        }
-    ]
-}
-</code></pre></p>
+<table>
+<thead>
+<tr>
+<th>Atrribute</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Message Type</td>
+<td><em>luminositySensor</em></td>
+</tr>
+<tr>
+<td>Device Type</td>
+<td><em>arduino</em></td>
+</tr>
+<tr>
+<td>Device</td>
+<td><em>uno</em></td>
+</tr>
+</tbody>
+</table>
 <h2 id="google-chrome-add-on-postman"><a name="user-content-google-chrome-add-on-postman" href="#google-chrome-add-on-postman" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Google Chrome add-on Postman</h2>
-<p><a href="https://www.google.com.br/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=1&amp;cad=rja&amp;uact=8&amp;sqi=2&amp;ved=0ahUKEwiH-ejl9YrPAhXLIpAKHWpVDBkQFggoMAA&amp;url=https%3A%2F%2Fchrome.google.com%2Fwebstore%2Fdetail%2Fpostman%2Ffhbjgbiflinjbdggehcddcbncdddomop%3Fhl%3Den&amp;usg=AFQjCNE_Yq59TT1ZExzJ68FTldg4ho_lGw&amp;sig2=s2A-KDOCEgGroyvXH0nKHA&amp;bvm=bv.132479545,d.Y2I">Chrome Web Store</a></p>
+<p><a href="https://www.google.com.br/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=1&amp;cad=rja&amp;uact=8&amp;sqi=2&amp;ved=0ahUKEwiH-ejl9YrPAhXLIpAKHWpVDBkQFggoMAA&amp;url=https%3A%2F%2Fchrome.google.com%2Fwebstore%2Fdetail%2Fpostman%2Ffhbjgbiflinjbdggehcddcbncdddomop%3Fhl%3Den&amp;usg=AFQjCNE_Yq59TT1ZExzJ68FTldg4ho_lGw&amp;sig2=s2A-KDOCEgGroyvXH0nKHA&amp;bvm=bv.132479545,d.Y2I">Chrome Web Store</a><br />
+<strong>Postman Rest Client</strong><br />
+1. Enter the device ID at the end of the URL; <em>(Send and receive messages through HTTP)</em><br />
+2. Authorization: OAuth2;<br />
+3. Headers: <br />
+<em>   Authorization - Bearer <strong><Device Token></strong><br />
+</em>   Content Type - application/json<br />
+4. Change from Get to Post;<br />
+5. Body:<br />
+<pre><code>{
+        &quot;mode&quot;:&quot;sync&quot;,
+        &quot;messageType&quot;:&quot;&lt;Message ID&gt;&quot;,
+        &quot;messages&quot;:[
+            {
+                &quot;sensor&quot;:&quot;sensor1&quot;,
+                &quot;value&quot;:&quot;20&quot;,
+                &quot;timestamp&quot;:1413191650   
+            }
+        ]
+}
+</code></pre><br />
+6. Click Send.</p>
+<h2 id="python"><a name="user-content-python" href="#python" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Python</h2>
+<p><a href="https://www.python.org/">Python Software Foundation</a><br />
+<a href="https://www.tutorialspoint.com/python/pdf/python_classes_objects.pdf">Python Object Oriented</a></p>
 <h2 id="node-js"><a name="user-content-node-js" href="#node-js" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>NODE JS</h2>
 <ul>
 <li><a href="http://danialk.github.io/blog/2014/04/12/arduino-and-nodejs-communication-with-serial-ports/">Arduino and NodeJS Communication With Serial Ports</a></li>
