@@ -1,11 +1,29 @@
 # arduino.buhler.coffeeCloud
-The project From Cofee to Cloud aim at presenting an example of implementing Internet of Things in a quick and easy way. Making use of the Hana Cloud 
+
+<div style="text-align: justify;">
+The project _From Cofee to Cloud_ aims at presenting an example of implementing Internet of Things (IoT) in a quick and easy way. 
+
+The use case is the monitoring of a cofee machine where a luminosity sensor keeps reading the **ready light** until it gets on, meaning cofee ready to be served. This way its status can be monitored remotelly and send an alert to the interested users (cofee addicteds).
+
+For such an application it will make necessary the join of frontend and backend software development toghether with an integration with hardware for collecting data from the _external world_. In a try to bring to this example more simplicity it was choosen the support of SAP cloud environment, the programming language Python and Arduino hardware compatible.
+
+Making use of the Hana Cloud infrastructure, more preciselly the Internet of Things (IoT) Service, it will be prepared an environment to receive and share data collected from a device.
+
+For the task of colleting data it will be used an Arduino board connected to a luminosity sensor. The reading is sent via serial port to a auxiliar device that's listening such port. The data is packed and sent to the cloud infrastructure.
+
+In the other side it makes necessary to provide a interface the final user may have access with the data collected and interact with. 
+
+The choosen technology for that is HTML5 with the use of Open UI5 library for better results.
+
+</div>
+
+
 ## SAP Hana Cloud Platform
 [SAP Hana Cloud Platform Cockpit](https://account.hanatrial.ondemand.com)
 ## Hana IoT Services
 
-
-
+## HTML5/UI5
+[Open UI5](http://openui5.org/)
 
 ### Source of information
 [Youtube - Internet of Things (IoT) Services](https://www.youtube.com/playlist?list=PLkzo92owKnVxzjoxwJdaa400E_UqkzE8J)

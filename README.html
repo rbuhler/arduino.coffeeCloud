@@ -1015,9 +1015,28 @@ body .markdown-body
   }
 }
 </style><title>README</title></head><body><article class="markdown-body"><h1 id="arduinobuhlercoffeecloud"><a name="user-content-arduinobuhlercoffeecloud" href="#arduinobuhlercoffeecloud" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>arduino.buhler.coffeeCloud</h1>
-<h2 id="hana-iot-services"><a name="user-content-hana-iot-services" href="#hana-iot-services" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Hana IoT Services</h2>
-<h3 id="sap-hana-cloud-platform"><a name="user-content-sap-hana-cloud-platform" href="#sap-hana-cloud-platform" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>SAP Hana Cloud Platform</h3>
+<div style="text-align: justify;">
+The project _From Cofee to Cloud_ aims at presenting an example of implementing Internet of Things (IoT) in a quick and easy way.
+
+The use case is the monitoring of a cofee machine where a luminosity sensor keeps reading the **ready light** until it gets on, meaning cofee ready to be served. This way its status can be monitored remotelly and send an alert to the interested users (cofee addicteds).
+
+For such an application it will make necessary the join of frontend and backend software development toghether with an integration with hardware for collecting data from the _external world_. In a try to bring to this example more simplicity it was choosen the support of SAP cloud environment, the programming language Python and Arduino hardware compatible.
+
+Making use of the Hana Cloud infrastructure, more preciselly the Internet of Things (IoT) Service, it will be prepared an environment to receive and share data collected from a device.
+
+For the task of colleting data it will be used an Arduino board connected to a luminosity sensor. The reading is sent via serial port to a auxiliar device that's listening such port. The data is packed and sent to the cloud infrastructure.
+
+In the other side it makes necessary to provide a interface the final user may have access with the data collected and interact with. 
+
+The choosen technology for that is HTML5 with the use of Open UI5 library for better results.
+
+</div>
+
+<h2 id="sap-hana-cloud-platform"><a name="user-content-sap-hana-cloud-platform" href="#sap-hana-cloud-platform" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>SAP Hana Cloud Platform</h2>
 <p><a href="https://account.hanatrial.ondemand.com">SAP Hana Cloud Platform Cockpit</a></p>
+<h2 id="hana-iot-services"><a name="user-content-hana-iot-services" href="#hana-iot-services" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Hana IoT Services</h2>
+<h2 id="html5ui5"><a name="user-content-html5ui5" href="#html5ui5" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>HTML5/UI5</h2>
+<p><a href="http://openui5.org/">Open UI5</a></p>
 <h3 id="source-of-information"><a name="user-content-source-of-information" href="#source-of-information" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Source of information</h3>
 <p><a href="https://www.youtube.com/playlist?list=PLkzo92owKnVxzjoxwJdaa400E_UqkzE8J">Youtube - Internet of Things (IoT) Services</a><br />
 <a href="https://help.hana.ondemand.com/iot/frameset.htm?ad829c660e584c329200022332f04d00.html">Help - SAP HANA Cloud Platform Internet of Things Services</a><br />
