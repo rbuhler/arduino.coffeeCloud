@@ -1015,40 +1015,31 @@ body .markdown-body
   }
 }
 </style><title>README</title></head><body><article class="markdown-body"><h1 id="arduinobuhlercoffeecloud"><a name="user-content-arduinobuhlercoffeecloud" href="#arduinobuhlercoffeecloud" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>arduino.buhler.coffeeCloud</h1>
-<div style="text-align: justify;">
-The project _From Cofee to Cloud_ aims at presenting an example of implementing Internet of Things (IoT) in a quick and easy way.
-
-The use case is the monitoring of a cofee machine where a luminosity sensor keeps reading the **ready light** until it gets on, meaning cofee ready to be served. This way its status can be monitored remotelly and send an alert to the interested users (cofee addicteds).
-
-For such an application it will make necessary the join of frontend and backend software development toghether with an integration with hardware for collecting data from the _external world_. In a try to bring to this example more simplicity it was choosen the support of SAP cloud environment, the programming language Python and Arduino hardware compatible.
-
-Making use of the Hana Cloud infrastructure, more preciselly the Internet of Things (IoT) Service, it will be prepared an environment to receive and share data collected from a device.
-
-For the task of colleting data it will be used an Arduino board connected to a luminosity sensor. The reading is sent via serial port to a auxiliar device that's listening such port. The data is packed and sent to the cloud infrastructure.
-
-In the other side it makes necessary to provide a interface the final user may have access with the data collected and interact with. 
-
-The choosen technology for that is HTML5 with the use of Open UI5 library for better results.
-
-</div>
-
-<h2 id="sap-hana-cloud-platform"><a name="user-content-sap-hana-cloud-platform" href="#sap-hana-cloud-platform" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>SAP Hana Cloud Platform</h2>
-<p><a href="https://account.hanatrial.ondemand.com">SAP Hana Cloud Platform Cockpit</a></p>
-<h2 id="hana-iot-services"><a name="user-content-hana-iot-services" href="#hana-iot-services" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Hana IoT Services</h2>
-<h2 id="html5ui5"><a name="user-content-html5ui5" href="#html5ui5" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>HTML5/UI5</h2>
-<p><a href="http://openui5.org/">Open UI5</a></p>
-<h3 id="source-of-information"><a name="user-content-source-of-information" href="#source-of-information" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Source of information</h3>
-<p><a href="https://www.youtube.com/playlist?list=PLkzo92owKnVxzjoxwJdaa400E_UqkzE8J">Youtube - Internet of Things (IoT) Services</a><br />
-<a href="https://help.hana.ondemand.com/iot/frameset.htm?ad829c660e584c329200022332f04d00.html">Help - SAP HANA Cloud Platform Internet of Things Services</a><br />
-<a href="http://sap.github.io/index.html?sort=asc&amp;filter=featured">SAP GitHub - Open Source &amp; SAP</a></p>
-<h2 id="draft"><a name="user-content-draft" href="#draft" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Draft</h2>
-<p>The main idea here is to present an implementation of an IoT project.<br />
-<strong>The problem</strong><br />
-Monitor the &ldquo;ready light&rdquo; of a coffee machine and advise the user when the coffee is ready.<br />
-<strong>The solution</strong><br />
-An Arduino UNO connected to a luminosity sensor checks for the &ldquo;ready light&rdquo; to turn on (meaning time for coffee).<br />
-From time to time the coffee machine status is sent to the cloud and from there the user can check such status in a UI5 web page.</p>
-<h4 id="internet-of-things-services"><a name="user-content-internet-of-things-services" href="#internet-of-things-services" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Internet of Things Services</h4>
+<h2 id="from-cofee-to-cloud"><a name="user-content-from-cofee-to-cloud" href="#from-cofee-to-cloud" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>From Cofee to Cloud</h2>
+<p><div style="text-align: justify;"><br />
+The project <em>From Cofee to Cloud</em> aims at presenting an example of implementing Internet of Things (IoT) in a quick and easy way. </p>
+<h3 id="use-case"><a name="user-content-use-case" href="#use-case" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Use Case</h3>
+<p>The use case is the monitoring of a cofee machine where a luminosity sensor keeps reading the <strong>ready light</strong> until it gets on, meaning cofee ready to be served. This way its status can be monitored remotelly by the interested users (cofee addicteds).</p>
+<p>For such an application it makes necessary the join of frontend and backend software development toghether with an integration with hardware for collecting data from the <em>external world</em>. In a try to bring to this example more simplicity it was choosen the support of SAP cloud environment, the programming language Python and Arduino hardware compatible.</p>
+<h3 id="hana-cloud-platform"><a name="user-content-hana-cloud-platform" href="#hana-cloud-platform" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Hana Cloud Platform</h3>
+<p>Making use of the Hana Cloud infrastructure, more preciselly the Internet of Things (IoT) Service, it will be prepared an environment to receive and share data collected from a device.<br />
+- <a href="https://account.hanatrial.ondemand.com">SAP Hana Cloud Platform Cockpit</a><br />
+- <a href="https://help.hana.ondemand.com/iot/frameset.htm?ad829c660e584c329200022332f04d00.html">Help - SAP HANA Cloud Platform Internet of Things Services</a><br />
+- <a href="https://www.youtube.com/playlist?list=PLkzo92owKnVxzjoxwJdaa400E_UqkzE8J">Youtube - Internet of Things (IoT) Services</a></p>
+<h3 id="arduino-and-python"><a name="user-content-arduino-and-python" href="#arduino-and-python" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Arduino and Python</h3>
+<p>For the task of colleting data it will be used an Arduino board connected to a luminosity sensor. The reading is sent via serial port to a auxiliar device that&rsquo;s listening such port. The data is packed and sent to the cloud infrastructure.<br />
+- <a href="https://www.arduino.cc/">Arduino</a><br />
+- <a href="https://www.python.org/">Python Software Foundation</a><br />
+- <a href="https://www.tutorialspoint.com/python/pdf/python_classes_objects.pdf">Python Object Oriented</a></p>
+<h3 id="user-interface-in-html5-ui5"><a name="user-content-user-interface-in-html5-ui5" href="#user-interface-in-html5-ui5" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>User Interface in HTML5 - UI5</h3>
+<p>In the other side it makes necessary to provide a interface the final user may have access with the data collected and interact with. The choosen technology for that is HTML5 with the use of Open UI5 library for better results.<br />
+- <a href="http://openui5.org/">Open UI5</a><br />
+</div></p>
+<h2 id="hands-on"><a name="user-content-hands-on" href="#hands-on" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Hands On</h2>
+<p><div style="text-align: justify;"><br />
+In order to handle the data collected by the hardware an infrastrucure shall be prepared. For such job Hana CLoud Platforma provides the Internet of Things Service that makes the service way easer.</p>
+<p>The support proposed implementation follows what is described next:</p>
+<h3 id="internet-of-things-services"><a name="user-content-internet-of-things-services" href="#internet-of-things-services" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Internet of Things Services</h3>
 <table>
 <thead>
 <tr>
@@ -1071,7 +1062,43 @@ From time to time the coffee machine status is sent to the cloud and from there 
 </tr>
 </tbody>
 </table>
-<h2 id="google-chrome-add-on-postman"><a name="user-content-google-chrome-add-on-postman" href="#google-chrome-add-on-postman" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Google Chrome add-on Postman</h2>
+<h3 id="mesasage-fields"><a name="user-content-mesasage-fields" href="#mesasage-fields" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Mesasage Fields</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Optional Settings</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sensor</td>
+<td>string</td>
+<td>Max. Length 255</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>date</td>
+<td></td>
+</tr>
+<tr>
+<td>value</td>
+<td>integer</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div style="text-align: justify;">
+[... under contruction]
+</div>
+
+<h2 id="more-info-and-supporting-tools"><a name="user-content-more-info-and-supporting-tools" href="#more-info-and-supporting-tools" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>More Info and Supporting Tools</h2>
+<h3 id="source-of-information"><a name="user-content-source-of-information" href="#source-of-information" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Source of information</h3>
+<p><a href="http://sap.github.io/index.html?sort=asc&amp;filter=featured">SAP GitHub - Open Source &amp; SAP</a></p>
+<h3 id="google-chrome-add-on-postman"><a name="user-content-google-chrome-add-on-postman" href="#google-chrome-add-on-postman" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Google Chrome add-on Postman</h3>
 <p><a href="https://www.google.com.br/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=1&amp;cad=rja&amp;uact=8&amp;sqi=2&amp;ved=0ahUKEwiH-ejl9YrPAhXLIpAKHWpVDBkQFggoMAA&amp;url=https%3A%2F%2Fchrome.google.com%2Fwebstore%2Fdetail%2Fpostman%2Ffhbjgbiflinjbdggehcddcbncdddomop%3Fhl%3Den&amp;usg=AFQjCNE_Yq59TT1ZExzJ68FTldg4ho_lGw&amp;sig2=s2A-KDOCEgGroyvXH0nKHA&amp;bvm=bv.132479545,d.Y2I">Chrome Web Store</a><br />
 <strong>Postman Rest Client</strong><br />
 1. Enter the device ID at the end of the URL; <em>(Send and receive messages through HTTP)</em><br />
@@ -1093,11 +1120,4 @@ From time to time the coffee machine status is sent to the cloud and from there 
         ]
 }
 </code></pre><br />
-6. Click Send.</p>
-<h2 id="python"><a name="user-content-python" href="#python" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Python</h2>
-<p><a href="https://www.python.org/">Python Software Foundation</a><br />
-<a href="https://www.tutorialspoint.com/python/pdf/python_classes_objects.pdf">Python Object Oriented</a></p>
-<h2 id="node-js"><a name="user-content-node-js" href="#node-js" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>NODE JS</h2>
-<ul>
-<li><a href="http://danialk.github.io/blog/2014/04/12/arduino-and-nodejs-communication-with-serial-ports/">Arduino and NodeJS Communication With Serial Ports</a></li>
-</ul></article></body></html>
+6. Click Send.</p></article></body></html>
