@@ -1,7 +1,8 @@
 # arduino.buhler.coffeeCloud
 
 ## From Cofee to Cloud 
-<div style="text-align: justify;">
+ <div style="text-align: justify;">
+
 The project _From Cofee to Cloud_ aims at presenting an example of implementing Internet of Things (IoT) in a quick and easy way. 
 
 ### Use Case
