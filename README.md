@@ -25,10 +25,10 @@ For the task of colleting data it will be used an Arduino board connected to a l
 ### User Interface in HTML5 - UI5
 In the other side it makes necessary to provide a interface the final user may have access with the data collected and interact with. The choosen technology for that is HTML5 with the use of Open UI5 library for better results.
 - [Open UI5](http://openui5.org/)
-</div>
+ </div>
 
 ## Hands On
-<div style="text-align: justify;">
+ <div style="text-align: justify;">
 In order to handle the data collected by the hardware an infrastrucure shall be prepared. For such job Hana CLoud Platforma provides the Internet of Things Service that makes the service way easer.
 
 The support proposed implementation follows what is described next:
@@ -47,11 +47,11 @@ sensor    | string  | Max. Length 255
 timestamp | date    | 
 value     | integer 
 
-</div>
+ </div>
 
-<div style="text-align: justify;">
+ <div style="text-align: justify;">
 [... under contruction]
-</div>
+ </div>
 
 ## More Info and Supporting Tools
 
