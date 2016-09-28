@@ -5,6 +5,8 @@ import calendar
 
 import postMessage
 
+import cl_HanaIot
+
 # DEVICE IDENTIFICATION
 sAccount = 'p1941020166trial'
 sDevice  = '9e8f52bf-281c-4fbc-9a34-9cd8e58710b5'
@@ -38,5 +40,6 @@ sMessage = json.dumps({'argv':{
 											'timestamp' : dDate_UTC
 											}]
 								}
-# POST THE MESSAGE TO HANA IOT INFRASTRUCTURE
-postMessage.main( sMessage )
+						})
+
+oHana = HanaIoT(sMessage)
