@@ -29,7 +29,7 @@ In the other side it makes necessary to provide a interface the final user may h
 
 ## Hands On
  <div style="text-align: justify;">
-In order to handle the data collected by the hardware an infrastrucure shall be prepared. For such job Hana CLoud Platforma provides the Internet of Things Service that makes the service way easer.
+In order to handle the data collected by the hardware an infrastructure shall be prepared. For such job Hana CLoud Platforma provides the Internet of Things Service that makes the service way easer.
 
 The support proposed implementation follows what is described next:
 
