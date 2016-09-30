@@ -82,3 +82,5 @@ value     | integer
 }
 ````
 6. Click Send.
+
+Rodrigo Bühler
