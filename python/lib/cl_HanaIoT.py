@@ -14,6 +14,8 @@
 # 				}]
 # 	}
 import json
+import urllib3
+import certifi
 
 class cl_HanaIoT:
 	'Common class for interacting with Hana IoT service'
@@ -22,7 +24,7 @@ class cl_HanaIoT:
 # *_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*
 	def __init__(self, json_msg):
 
-	#JSON object
+		#JSON object
 		jMessage = json.loads(json_msg)
 
 		self.sAccount    = jMessage['arg']['account']
@@ -43,64 +45,80 @@ class cl_HanaIoT:
 # *_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*
 	def writeDown(self):
 		print('\n')
-		print('NUmber of messages: ' + str(self.nMessages))
 		print ('*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*')
 		print ('Account  : ' + self.sAccount)
 		print ('Device   : ' + self.sDevice)
 		print ('Token    : ' + self.sToken)
 		print ('Msg.Type : ' + self.sMsgType)
 		print ('Proxy    : ' + self.sProxy)
-		print ('Message.Sensor    : ' + self.aMessage[0]['sensor'])
-		print ('Message.Value     : ' + str(self.aMessage[0]['value']))
-		print ('Message.TimeStamp : ' + str(self.aMessage[0]['timestamp']))
+
+		nCount = 0
+		while nCount < self.nMessages:		
+			print ('+ Message ' + str(nCount + 1) )
+			print ('\t' + 'Sensor    : ' + self.aMessage[nCount]['sensor'])
+			print ('\t' + 'Value     : ' + str(self.aMessage[nCount]['value']))
+			print ('\t' + 'TimeStamp : ' + str(self.aMessage[nCount]['timestamp']))
+			nCount += 1
+
 		print ('*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*')
 		print('\n')
 
 # Post the message to the IoT service
 # *_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*
-	# def send_msg():
+	def sendMsg(self):
 
-	# # use with or without proxy
-	# http = urllib3.PoolManager(
-	# 	cert_reqs='CERT_REQUIRED', # Force certificate check.
-	# 	ca_certs=certifi.where(),  # Path to the Certifi bundle.
-	# )
-	 
-	# if self.sProxy != '' :
-	# 	http = urllib3.proxy_from_url( self.sProxy )	
+		# use with or without proxy
+		http = urllib3.PoolManager(
+			cert_reqs='CERT_REQUIRED', # Force certificate check.
+			ca_certs=certifi.where(),  # Path to the Certifi bundle.
+		)	 
+		# set the proxy when applicable
+		if self.sProxy != '' :
+			http = urllib3.proxy_from_url( self.sProxy )	
 
-	# url = 'https://iotmms'+ self.sAccount + '.hanatrial.ondemand.com/com.sap.iotservices.mms/v1/api/http/data/' + self.sDevice
-
-	# headers = urllib3.util.make_headers()
-
-	# # use with authentication
-	# # please insert correct OAuth token
-	# headers['Authorization'] = 'Bearer ' + self.sToken
-	# headers['Content-Type'] = 'application/json;charset=utf-8'
-
-	# # send message of Message Type 'm0t0y0p0e1' and the corresponding payload layout that you defined in the IoT Services Cockpit
-	# aBody_mode     = '"mode":"async"'
-	# aBody_msgType  = 'messageType":"' + self.sMsgType
-	# aBody_messages = 
-	
-	# # BEGIN LOOP
-	# 	aMessages = '{'+'"sensor": '+''+'"value": '+'"timestamp" :'+'},'
-	# # END LOOP
-	
-	# aBody_messages = '"messages":[' + aMessages + ']'
+		# URL preparation
+		url = 'https://iotmms'+ self.sAccount + '.hanatrial.ondemand.com/com.sap.iotservices.mms/v1/api/http/data/' + self.sDevice
+		print('URL : ' + url)
 
 
+		# HEADERS preparation
+		aHeader = urllib3.util.make_headers()
+		# use with authentication
+		aHeader['Authorization'] = 'Bearer ' + self.sToken
+		aHeader['Content-Type'] = 'application/json;charset=utf-8'
+		
+		# BODY preparation
+		aBody_mode     = '"mode":"async"'
+		aBody_msgType  = '"messageType":"' + self.sMsgType + '"'
+			
+		aBody_messages = '"messages":['
+		nCount = 0
+		while nCount < self.nMessages:
+			sLine = '{'
+			sLine = sLine + '"sensor":' + '"' + (self.aMessage[nCount]['sensor'] + '"' + ', ')
+			sLine = sLine + '"value":' + str(self.aMessage[nCount]['value']) + ', '
+			sLine = sLine + '"timestamp":' + str(self.aMessage[nCount]['timestamp'])
 
-	# aBody = '{' + aBody_mode + ',' + aBody_msgType + ',' + aBody_messages + '}'
+			if nCount + 1  != self.nMessages:
+				sLine = sLine + '},'
+			if nCount + 1 == self.nMessages:
+				sLine = sLine + '}'
+
+			aBody_messages = aBody_messages + sLine
+			nCount += 1
+
+		aBody_messages = aBody_messages + ']'
+
+		aBody = '{' + aBody_mode + ', ' + aBody_msgType + ', ' + aBody_messages + '}'
+		print('Body : ' + aBody)
+		print('\n')
 
 
-	# body='{"mode":"async", "messageType":"' + self.sMsgType + '", "messages":[{"sensor":"python", "value":"95", "timestamp":1413191650}]}'
+		try:
+			r = http.urlopen('POST', url, body=aBody, headers=aHeader)
+			print('\n')
+			print('[Status return] ' + str(r.status))
+			print('[Return msg   ] ' + str(r.data))
 
-	# try:
-	# 	r = http.urlopen('POST', url, body=body, headers=headers)
-	# 	print('\n')
-	# 	print('[Status return] ' + str(r.status))
-	# 	print('[Return msg   ] ' + str(r.data))
-
-	# except urllib3.exceptions.SSLError as e:
-	# 	print (e)
+		except urllib3.exceptions.SSLError as e:
+			print (e)
