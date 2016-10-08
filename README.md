@@ -49,7 +49,14 @@ value     | integer
 
  </div>
 
- <div style="text-align: justify;">
+### Arduino
+
+**References**
+- [Forum Topic: JSON Library?](http://forum.arduino.cc/index.php?topic=172578.0)
+- [Library ArduinoJson](https://github.com/bblanchon/ArduinoJson)
+- [Library json-arduino](https://github.com/not404/json-arduino)
+
+<div style="text-align: justify;">
 [... under contruction]
  </div>
 
