@@ -43,7 +43,7 @@ class cl_HanaIoT:
 
 # Print message in the console
 # *_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*
-	def writeDown(self):
+	def printMsg(self):
 		print('\n')
 		print ('*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*')
 		print ('Account  : ' + self.sAccount)

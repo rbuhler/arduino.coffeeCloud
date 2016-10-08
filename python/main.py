@@ -72,6 +72,6 @@ sMessage = json.dumps({'arg':{
 
 from cl_HanaIoT import cl_HanaIoT
 oHana = cl_HanaIoT(sMessage)
-oHana.writeDown()
+oHana.printMsg()
 
-oHana.sendMsg()
+# oHana.sendMsg()
