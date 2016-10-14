@@ -35,11 +35,11 @@ The support proposed implementation follows what is described next:
 
 ### Internet of Things Services
 
-**SAP HANA Cloud Platform Cockpit**
-- Steps (Left Panel):
- - **Services**;
+- Form the **SAP HANA Cloud Platform Cockpit** root;
+- Left Panel:
+ - Choose **Services**;
  - Enable **Internet of Things**;
- - **Go to Service**.
+ - Choose **Go to Service**.
 
 Atrribute        | Value
 -----------------|---------------------
@@ -54,11 +54,6 @@ sensor    | string  | Max. Length 255
 timestamp | date    | 
 value     | integer 
 
- - Steps (Left Panel):
-  - **Applications**;
-  - **Java Applications**;
-  - Choose the IoT application;
-
  </div>
  
  <div style="text-align: justify;">
@@ -66,14 +61,40 @@ value     | integer
 In order to create a new binding for the IoT service tables into the Hana XS infrastructure it makes necessay a little customizing.
 
 **SAP HANA Cloud Platform Cockpit**
-- Steps (Left Panel):
+- Form the **SAP HANA Cloud Platform Cockpit** root;
+- Left Panel:
  - **Persistance**;
  - **Database & Schemas**;
  - Pushbutton **New**;
  - Inform a **Database ID**;
  - Choose **Database System:** HANA MDC;
  - Choose **Save**.
- </div>
+
+- Form the **SAP HANA Cloud Platform Cockpit** root;
+- Left Panel:
+ - **Applications**;
+ - **Java Applications**;
+ - Choose the IoT application;
+ - **Configuration**;
+ - **Data Source Bindings**;
+ - Delete the current binding;
+ - Choose **New Binding**;
+ - Enter a **Data Source**;
+ - Choose **DB/Schema ID**;
+ - Enter **Database User :** SYSTEM;
+ - Enter **Password**;
+ - Choose **Save**.
+ 
+- Form the **SAP HANA Cloud Platform Cockpit** root;
+- Left Panel:
+ - **Applications**;
+ - **Java Applications**;
+ - Choose the IoT application;
+ - Choose **Overview**;
+ - Choose **Stop** pushbutton;
+ - Choose **Start** pushbutton.
+ 
+</div>
 
 
 ### Arduino
