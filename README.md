@@ -34,6 +34,13 @@ In order to handle the data collected by the hardware an infrastructure shall be
 The support proposed implementation follows what is described next:
 
 ### Internet of Things Services
+
+**SAP HANA Cloud Platform Cockpit**
+- Steps (Left Panel):
+ - **Services**;
+ - Enable **Internet of Things**;
+ - **Go to Service**.
+
 Atrribute        | Value
 -----------------|---------------------
 Message Type     | _luminositySensor_ 
@@ -47,7 +54,27 @@ sensor    | string  | Max. Length 255
 timestamp | date    | 
 value     | integer 
 
+ - Steps (Left Panel):
+  - **Applications**;
+  - **Java Applications**;
+  - Choose the IoT application;
+
  </div>
+ 
+ <div style="text-align: justify;">
+### Data Base
+In order to create a new binding for the IoT service tables into the Hana XS infrastructure it makes necessay a little customizing.
+
+**SAP HANA Cloud Platform Cockpit**
+- Steps (Left Panel):
+ - **Persistance**;
+ - **Database & Schemas**;
+ - Pushbutton **New**;
+ - Inform a **Database ID**;
+ - Choose **Database System:** HANA MDC;
+ - Choose **Save**.
+ </div>
+
 
 ### Arduino
 
