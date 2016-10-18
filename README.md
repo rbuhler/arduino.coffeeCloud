@@ -100,9 +100,7 @@ In order to create a new binding for the IoT service tables into the Hana XS inf
 ### Arduino
 
 **References**
-- [Forum Topic: JSON Library?](http://forum.arduino.cc/index.php?topic=172578.0)
 - [Library ArduinoJson](https://github.com/bblanchon/ArduinoJson)
-- [Library json-arduino](https://github.com/not404/json-arduino)
 
 <div style="text-align: justify;">
 [... under contruction]
