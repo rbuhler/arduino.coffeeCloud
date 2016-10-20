@@ -1,14 +1,12 @@
-#include <Time.h>
+
 #include <ArduinoJson.h>
 
 // Hardware Config
-int nLumiSensor=0;    //pin 0 : Luminosity sensor
+int iLumiSensor=0;    //pin 0 : Luminosity sensor
 
-int nGreenLED=8;    //digital pin  8 : GrenLED
-int nYellowLED=9;   //digital pin  9 : YellowLED
-int nRedLED=10;     //digital pin 13 : RedLED
-
-int nAnalogRead;    //analog buffer
+int iGreenLED=8;    //digital pin  8 : GrenLED
+int iYellowLED=9;   //digital pin  9 : YellowLED
+int iRedLED=10;     //digital pin 13 : RedLED
 
 // JSON header message
 String sAccount;
@@ -16,58 +14,46 @@ String sDevice;
 String sToken;
 String sMsgType;
 String sProxy;
-int sUser;
-// JSON body message
+int iUser;
+// JSON body message  
 String sSensorId;
-int nRead;
-int dTimestamp;
+int iRead;
 
 void setup()
 {
 Serial.begin(9600); //serial port speed : 9600bps(baud).
 
-  pinMode(nGreenLED, OUTPUT);    //pin setup as digital output
-  pinMode(nYellowLED, OUTPUT);   //pin setup as digital output
-  pinMode(nRedLED, OUTPUT);      //pin setup as digital output
+  pinMode(iGreenLED, OUTPUT);    //pin setup as digital output
+  pinMode(iYellowLED, OUTPUT);   //pin setup as digital output
+  pinMode(iRedLED, OUTPUT);      //pin setup as digital output
  
-  digitalWrite(nGreenLED, LOW);  //LED switched off
-  digitalWrite(nYellowLED, LOW); //LED switched off
-  digitalWrite(nRedLED, LOW);    //LED switched off
+  digitalWrite(iGreenLED, LOW);  //LED switched off
+  digitalWrite(iYellowLED, LOW); //LED switched off
+  digitalWrite(iRedLED, LOW);    //LED switched off
 
   sAccount  = "p1941020166trial";
   sDevice   = "9e8f52bf-281c-4fbc-9a34-9cd8e58710b5";
   sToken    = "31479766523918bd1ef473b1d1a8b1a2";
   sMsgType  = "ba2434ef5c2b4bc8de83";
   sProxy    = "";
-  sUser     = 0x0;
+  iUser     = 0x0;
 
-  sSensorId = "ArdoLumy";
-  nRead        = 0;
-  dTimestamp   = 0;
- 
+  sSensorId  = "ArdoLumy";
+  iRead      = 0;
 }
 
 void loop()
 {
- /*
- In order to convert the data read from the analog tension module 
- connected to the Arduino it makes necessary a little calculation procedure.
- 
- The value range read from the module varies from 0 up to 1023, this
- way dividing by 5 we have intervals of 0v to 5v (volts).
- 
- */
- nAnalogRead = analogRead(nLumiSensor);   // Reads the Luminosity sensor
- nRead = map(nAnalogRead, 0, 1023, 0, 5); // Calculates the intervals
+
+ iRead  = analogRead(iLumiSensor);   // Reads the Luminosity sensor
 
 // Step 1: Reserve memory space
   StaticJsonBuffer<400> jsonBuffer;
 
 // Step 2: Build object tree in memory
-  JsonObject& jRead = jsonBuffer.createObject();
-    jRead["sensor"] = sSensorId;
-    jRead["value"] = "nRead";
-    jRead["timestamp"] = 123456;
+  JsonObject& jRead    = jsonBuffer.createObject();
+    jRead["sensor"]    = sSensorId;
+    jRead["value"]     = iRead;
   
   JsonObject& jMessage = jsonBuffer.createObject();
     jMessage["account"]  = sAccount;
@@ -75,23 +61,22 @@ void loop()
     jMessage["devToken"] = sToken;
     jMessage["messType"] = sMsgType;
     jMessage["proxy"]    = sProxy;
-  JsonArray& messages = jMessage.createNestedArray("messages");
+  JsonArray& messages    = jMessage.createNestedArray("messages");
     messages.add(jRead);
 
   JsonObject& jArgs = jsonBuffer.createObject();
-  JsonArray& args = jArgs.createNestedArray("args");
+  JsonArray& args   = jArgs.createNestedArray("args");
     args.add(jMessage);
 
 // Step 3: Generate the JSON string
   jArgs.printTo(Serial);
 
- if (nRead < 2) { 
+ if (iRead < 2) { 
   trafficLightGreen();
  }else
-  if(nRead < 4)
+  if(iRead < 4)
  {
   trafficLightYellow();
-  
  }else{
   trafficLightRed();
   
@@ -101,21 +86,21 @@ void loop()
 // LIBRARY
 void trafficLightGreen()
 {
-  digitalWrite(nGreenLED, HIGH);
-  digitalWrite(nYellowLED, LOW);
-  digitalWrite(nRedLED, LOW); 
+  digitalWrite(iGreenLED, HIGH);
+  digitalWrite(iYellowLED, LOW);
+  digitalWrite(iRedLED, LOW); 
 }
 
 void trafficLightYellow()
 {
-  digitalWrite(nGreenLED, LOW);
-  digitalWrite(nYellowLED, HIGH);
-  digitalWrite(nRedLED, LOW); 
+  digitalWrite(iGreenLED, LOW);
+  digitalWrite(iYellowLED, HIGH);
+  digitalWrite(iRedLED, LOW); 
 }
 
 void trafficLightRed()
 {
-  digitalWrite(nGreenLED, LOW);
-  digitalWrite(nYellowLED, LOW);
-  digitalWrite(nRedLED, HIGH); 
+  digitalWrite(iGreenLED, LOW);
+  digitalWrite(iYellowLED, LOW);
+  digitalWrite(iRedLED, HIGH); 
 }
