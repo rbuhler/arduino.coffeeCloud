@@ -21,6 +21,9 @@ For the task of colleting data it will be used an Arduino board connected to a l
 - [Arduino](https://www.arduino.cc/)
 - [Python Software Foundation](https://www.python.org/)
 - [Python Object Oriented](https://www.tutorialspoint.com/python/pdf/python_classes_objects.pdf)
+- [Python Classes](https://docs.python.org/3/tutorial/classes.html)
+- [Python Switch Statement](https://pypi.python.org/pypi/switch/1.1.0)
+- [OS_flavor_name_version](https://github.com/hpcugent/easybuild/wiki/OS_flavor_name_version)
 
 ### User Interface in HTML5 - UI5
 In the other side it makes necessary to provide a interface the final user may have access with the data collected and interact with. The choosen technology for that is HTML5 with the use of Open UI5 library for better results.
