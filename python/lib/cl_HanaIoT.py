@@ -113,7 +113,6 @@ class cl_HanaIoT:
 		print('Body : ' + aBody)
 		print('\n')
 
-
 		try:
 			r = http.urlopen('POST', url, body=aBody, headers=aHeader)
 			print('\n')
