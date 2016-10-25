@@ -1,7 +1,5 @@
 import sys
-import random
-import datetime
-import calendar
+# import random
 import json
 
 sys.path.append('lib')
@@ -17,91 +15,51 @@ sSensor    = '' #'Python'
 iValue     = 0
 iTimeStamp = 0
 
-sPort      = '/dev/cu.usbmodem411'
 iBRate     = 9600
 
-#RANDOM VALUE (pretend a real random reading)
-# iValue1 = random.randrange(0, 100)
-# iValue2 = random.randrange(0, 100)
-# iValue3 = random.randrange(0, 100)
+iSleep     = 3
 
-# CURRENT DATE
-# nTimes = 0
-# while nTimes <= 2:
-# # Get the current date
-# 	dToday      = datetime.datetime.now() + datetime.timedelta(seconds = 5 * nTimes)
-# # Cast current date format into Tuple
-# 	dDate_tuple = dToday.timetuple()
-# # Cast the Tuple format into UTC (seconds from January 1970)
-# 	if nTimes == 0:
-# 		dDate_UTC1 = calendar.timegm( dDate_tuple )
-# 	if nTimes == 1:
-# 		dDate_UTC2 = calendar.timegm( dDate_tuple )
-# 	if nTimes == 2:
-# 		dDate_UTC3 = calendar.timegm( dDate_tuple )
-
-# 	nTimes += 1
-
-
-# Get the current date
-dToday      = datetime.datetime.now()
-# Cast current date format into Tuple
-dDate_tuple = dToday.timetuple()
-# Cast the Tuple format into UTC (seconds from January 1970)
-dDate_UTC  = calendar.timegm( dDate_tuple )
-# Nice source: http://www.saltycrane.com/blog/2008/11/python-datetime-time-conversions/
-
-
-
-# sMessage = json.dumps( jMessage )
-
-
-# PREPARE THE CALL'S PARAMETERS
-sMessage = json.dumps({'arg':{
-								'account'  : sAccount,
-								'device'   : sDevice,
-								'devToken' : sToken,
-								'messType' : sMsgType,
-								'proxy'    : sProxy,
-								'messages' : [{
-											'sensor'    : sSensor, 
-											'value'     : iValue, 
-											'timestamp' : dDate_UTC 
-											},{
-											'sensor'    : sSensor, 
-											'value'     : iValue, 
-											'timestamp' : dDate_UTC
-											},{
-											'sensor'    : sSensor, 
-											'value'     : iValue, 
-											'timestamp' : dDate_UTC
-											}]
-								}
-						})
+# MAC OSX
+sPort      = '/dev/cu.usbmodem411'
 
 # Import the class: file -> class
-from cl_Arduino import cl_Arduino
-from cl_HanaIoT import cl_HanaIoT
+from cl_Arduino  import cl_Arduino
+from cl_HanaIoT  import cl_HanaIoT
+from cl_TimeDate import cl_TimeDate
 
 # Instanciate the object
 oArduino = cl_Arduino()
-oHana    = cl_HanaIoT(sMessage)
+# oHana    = cl_HanaIoT(sMessage)
+oTimeDate = cl_TimeDate()
 
-# Call a method
 # Open
 oConn = oArduino.serialOpenConn(sPort, iBRate)
-# Read
-oArduino.serialReadJson(oConn)
-print('\n')
-oArduino.serialReadJson(oConn)
-print('\n')
-oArduino.serialReadJson(oConn)
-print('\n')
-oArduino.serialReadJson(oConn)
-print('\n')
-oArduino.serialReadJson(oConn)
-# Close
-oArduino.serialCloseConn(oConn)
+iIndex = oTimeDate.timeUTC()
+print('Index : ' + str(iIndex))
 
-# oHana.printMsg()
-# oHana.sendMsg()
+
+if oConn ==  None:
+	print('[Coffee to Cloud] Unable to open the port')
+else:
+	while True:
+		# Gets the current date and time UTC format
+		dDate_UTC = oTimeDate.timeUTC()
+
+		# Read Serial Port
+		jMessage = oArduino.serialReadJson(oConn)
+
+		# Add new info to the JSON 
+		aMessage = json.loads(jMessage)
+		aMessage[u'args'][0][u'messages'][0][u'timestamp'] = dDate_UTC
+		aMessage[u'args'][0][u'index'] = iIndex
+
+		jMessage = json.dumps(aMessage)
+
+		print( jMessage )
+		print('\n')
+		# oHana.sendMsg()
+
+		oTimeDate.delay( iSleep )
+	# Close
+	oArduino.serialCloseConn( oConn )
+	

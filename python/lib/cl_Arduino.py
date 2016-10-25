@@ -17,28 +17,14 @@ class cl_Arduino:
 		self.LINUX   = 'Linux'
 		self.MACOSX  = 'Darwin'
 
-		self.PORT1 = ''
-		self.PORT2 = ''
-
-# Set the serial ports
-		# switch sSisOp:
-		# 	case self.MACOSX:
-		# 		self.PORT1 = ''
-		# 		self.PORT2 = ''
-
-		# 	case self.WINDOWS:
-		# 		self.PORT1 = ''
-		# 		self.PORT2 = ''
-
-		# 	case self.LINUX:
-		# 		self.PORT1 = ''
-		# 		self.PORT2 = ''
-
 # ClassMothod
 # *_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*
 	def serialOpenConn(self, connPort, connBaudrate):
-		conn = serial.Serial( port=connPort, baudrate=connBaudrate )
-		return conn
+		try:
+			conn = serial.Serial( port=connPort, baudrate=connBaudrate )
+			return conn
+		except:
+			return None
 
 # ClassMothod
 # *_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*
@@ -65,4 +51,5 @@ class cl_Arduino:
 
 			if ( iOpen <= 0 ):
 				bLoop = False
-		print(jMessage)
+		
+		return(jMessage)
