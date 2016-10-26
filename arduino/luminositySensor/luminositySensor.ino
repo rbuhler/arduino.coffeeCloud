@@ -54,6 +54,7 @@ void loop()
   JsonObject& jRead    = jsonBuffer.createObject();
     jRead["sensor"]    = sSensorId;
     jRead["value"]     = iRead;
+    jRead["user"]      = iUser;
   
   JsonObject& jMessage = jsonBuffer.createObject();
     jMessage["account"]  = sAccount;

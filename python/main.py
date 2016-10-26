@@ -4,6 +4,9 @@ import json
 
 sys.path.append('lib')
 
+# Header message
+sMsgTypeHeader = 'c83b412a80222cbf1708'
+
 # DEVICE IDENTIFICATION
 sAccount   = '' #'p1941020166trial'
 sDevice    = '' #'9e8f52bf-281c-4fbc-9a34-9cd8e58710b5'
@@ -41,6 +44,25 @@ print('Index : ' + str(iIndex))
 if oConn ==  None:
 	print('[Coffee to Cloud] Unable to open the port')
 else:
+	# Read Serial Port
+	jMessage = oArduino.serialReadJson(oConn)	
+	aHeaderMessage  = json.loads(jMessage)
+	
+	sUser = aHeaderMessage[u'args'][0][u'user']
+
+	aHeaderMessage[u'args'][0][u'messages'][0] = None
+	aHeaderMessage[u'args'][0][u'messages'][0][u'index'] = dDate_UTC
+	aHeaderMessage[u'args'][0][u'messages'][0][u'user'] = sUser
+	aHeaderMessage[u'args'][0][u'messages'][0][u'date'] = 0
+	aHeaderMessage[u'args'][0][u'messages'][0][u'time'] = 0
+	
+	jMessage = json.dumps(aHeaderMessage)
+
+	print( jMessage )
+	print('\n')
+	# Send Header
+	# oHana.sendMsg(jMessage)
+
 	while True:
 		# Gets the current date and time UTC format
 		dDate_UTC = oTimeDate.timeUTC()
@@ -50,14 +72,15 @@ else:
 
 		# Add new info to the JSON 
 		aMessage = json.loads(jMessage)
-		aMessage[u'args'][0][u'messages'][0][u'timestamp'] = dDate_UTC
+ 		aMessage[u'args'][0][u'messages'][0][u'timestamp'] = dDate_UTC
 		aMessage[u'args'][0][u'index'] = iIndex
 
 		jMessage = json.dumps(aMessage)
 
 		print( jMessage )
 		print('\n')
-		# oHana.sendMsg()
+		# Send Message
+		# oHana.sendMsg(jMessage)
 
 		oTimeDate.delay( iSleep )
 	# Close
