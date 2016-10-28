@@ -139,4 +139,26 @@ In order to create a new binding for the IoT service tables into the Hana XS inf
 ````
 6. Click Send.
 
+Message Types
+
+	sensorHeader [7cfead179919a98cbed9]
+		index
+		sensor
+			date
+			time
+	
+	sensorLuminosity [56a55910fd4abd99f088]
+		index
+		sensor
+		timestamp
+			value
+			user
+
+Device type: coffeeMachine
+ID    [686c2b88de3953d81948]
+
+Device: Arduino
+ID    [1e4d608a-01c9-4060-b7b3-71e4b91e31a8]
+Token [1a81e19d91978bddfbeb3a6a3d45e25]
+
 Rodrigo Bühler
