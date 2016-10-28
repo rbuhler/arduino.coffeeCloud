@@ -12,10 +12,11 @@ class cl_TimeDate:
 
 # ClassMothod
 # *_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*
-	def timeUTC(self):
+	def getUTC(self):
 
 		# Get the current date
-		dToday      = datetime.datetime.now()
+		# dToday      = datetime.datetime.now()
+		dToday = datetime.datetime.now()
 		# Cast current date format into Tuple
 		dTuple = dToday.timetuple()
 		# Cast the Tuple format into UTC (seconds from January 1970)
@@ -23,6 +24,25 @@ class cl_TimeDate:
 		# Nice source: http://www.saltycrane.com/blog/2008/11/python-datetime-time-conversions/
 
 		return dUTC
+
+# ClassMothod
+# *_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*
+	def getDate(self):
+				# Get the current date
+		dDate  = datetime.datetime.now()
+		dToday = dDate.strftime('%d/%m/%Y')
+		# ('%Y-%m-%d %H:%M:%S')
+
+		return (dToday)
+
+# ClassMothod
+# *_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*
+	def getTime(self):
+				# Get the current date
+		dDate  = datetime.datetime.now()
+		dToday = dDate.strftime('%H:%M:%S')
+
+		return (dToday)
 
 # ClassMothod
 # *_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*

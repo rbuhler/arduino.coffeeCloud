@@ -8,6 +8,7 @@ int iGreenLED=8;    //digital pin  8 : GrenLED
 int iYellowLED=9;   //digital pin  9 : YellowLED
 int iRedLED=10;     //digital pin 13 : RedLED
 
+int iLimit = 100;
 // JSON header message
 String sAccount;
 String sDevice;
@@ -32,9 +33,9 @@ Serial.begin(9600); //serial port speed : 9600bps(baud).
   digitalWrite(iRedLED, LOW);    //LED switched off
 
   sAccount  = "p1941020166trial";
-  sDevice   = "9e8f52bf-281c-4fbc-9a34-9cd8e58710b5";
-  sToken    = "31479766523918bd1ef473b1d1a8b1a2";
-  sMsgType  = "ba2434ef5c2b4bc8de83";
+  sDevice   = "1e4d608a-01c9-4060-b7b3-71e4b91e31a8";
+  sToken    = "1a81e19d91978bddfbeb3a6a3d45e25";
+  sMsgType  = "56a55910fd4abd99f088";
   sProxy    = "";
   iUser     = 0x0;
 
@@ -52,16 +53,19 @@ void loop()
 
 // Step 2: Build object tree in memory
   JsonObject& jRead    = jsonBuffer.createObject();
+    jRead["index"]     = 0;
     jRead["sensor"]    = sSensorId;
+    jRead["timestamp"] = 0;    
     jRead["value"]     = iRead;
     jRead["user"]      = iUser;
-  
+    
   JsonObject& jMessage = jsonBuffer.createObject();
     jMessage["account"]  = sAccount;
     jMessage["device"]   = sDevice;
     jMessage["devToken"] = sToken;
     jMessage["messType"] = sMsgType;
     jMessage["proxy"]    = sProxy;
+    
   JsonArray& messages    = jMessage.createNestedArray("messages");
     messages.add(jRead);
 
@@ -72,36 +76,19 @@ void loop()
 // Step 3: Generate the JSON string
   jArgs.printTo(Serial);
 
- if (iRead < 2) { 
-  trafficLightGreen();
- }else
-  if(iRead < 4)
- {
-  trafficLightYellow();
- }else{
-  trafficLightRed();
-  
- }
-}
-
-// LIBRARY
-void trafficLightGreen()
-{
-  digitalWrite(iGreenLED, HIGH);
-  digitalWrite(iYellowLED, LOW);
-  digitalWrite(iRedLED, LOW); 
-}
-
-void trafficLightYellow()
-{
-  digitalWrite(iGreenLED, LOW);
-  digitalWrite(iYellowLED, HIGH);
-  digitalWrite(iRedLED, LOW); 
-}
-
-void trafficLightRed()
-{
-  digitalWrite(iGreenLED, LOW);
-  digitalWrite(iYellowLED, LOW);
-  digitalWrite(iRedLED, HIGH); 
+  if (iRead < iLimit) { 
+    digitalWrite(iGreenLED, HIGH);
+    digitalWrite(iYellowLED, LOW);
+    digitalWrite(iRedLED, LOW);
+  }
+  if(iRead <= iLimit) {
+    digitalWrite(iGreenLED, HIGH);
+    digitalWrite(iYellowLED, HIGH);
+    digitalWrite(iRedLED, LOW); 
+  }
+  if(iRead > iLimit) {
+    digitalWrite(iGreenLED, HIGH);
+    digitalWrite(iYellowLED, HIGH);
+    digitalWrite(iRedLED, HIGH); 
+  }
 }

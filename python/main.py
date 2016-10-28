@@ -8,13 +8,13 @@ sys.path.append('lib')
 sMsgTypeHeader = 'c83b412a80222cbf1708'
 
 # DEVICE IDENTIFICATION
-sAccount   = '' #'p1941020166trial'
-sDevice    = '' #'9e8f52bf-281c-4fbc-9a34-9cd8e58710b5'
-sToken     = '' #'31479766523918bd1ef473b1d1a8b1a2'
-sMsgType   = '' #'ba2434ef5c2b4bc8de83'
+sAccount   = ''
+sDevice    = ''
+sToken     = ''
+sMsgType   = ''
 sProxy     = '' #'http://proxy:8080'
 
-sSensor    = '' #'Python'
+sSensor    = ''
 iValue     = 0
 iTimeStamp = 0
 
@@ -31,58 +31,66 @@ from cl_HanaIoT  import cl_HanaIoT
 from cl_TimeDate import cl_TimeDate
 
 # Instanciate the object
-oArduino = cl_Arduino()
-# oHana    = cl_HanaIoT(sMessage)
+oArduino  = cl_Arduino()
+oHana     = cl_HanaIoT()
 oTimeDate = cl_TimeDate()
 
 # Open
 oConn = oArduino.serialOpenConn(sPort, iBRate)
-iIndex = oTimeDate.timeUTC()
-print('Index : ' + str(iIndex))
 
 
 if oConn ==  None:
 	print('[Coffee to Cloud] Unable to open the port')
 else:
 	# Read Serial Port
-	jMessage = oArduino.serialReadJson(oConn)	
-	aHeaderMessage  = json.loads(jMessage)
-	
-	sUser = aHeaderMessage[u'args'][0][u'user']
+	jMessage = oArduino.serialReadJson(oConn)
+	# Add new info to the JSON 
+	aMessage = json.loads(jMessage)
 
-	aHeaderMessage[u'args'][0][u'messages'][0] = None
-	aHeaderMessage[u'args'][0][u'messages'][0][u'index'] = dDate_UTC
-	aHeaderMessage[u'args'][0][u'messages'][0][u'user'] = sUser
-	aHeaderMessage[u'args'][0][u'messages'][0][u'date'] = 0
-	aHeaderMessage[u'args'][0][u'messages'][0][u'time'] = 0
+	iIndex  = oTimeDate.getUTC()
+	sSensor = aMessage[u'args'][0][u'messages'][0][u'sensor']
+	dDate   = oTimeDate.getDate()
+	tTime   = oTimeDate.getTime()
+
+	jMessage = json.dumps({
+		'args'     :[{
+		'account'  : aMessage[u'args'][0][u'account'],
+		'device'   : aMessage[u'args'][0][u'device'],
+		'devToken' : aMessage[u'args'][0][u'devToken'],
+		'messType' : '7cfead179919a98cbed9',
+		'proxy'    : aMessage[u'args'][0][u'proxy'],
+		'messages' :[{'index':iIndex, 'sensor':sSensor, 'date':dDate, 'time':tTime }]
+		}]
+	})
 	
-	jMessage = json.dumps(aHeaderMessage)
+	# jMessage = json.dumps(aHeaderMessage)
 
 	print( jMessage )
 	print('\n')
 	# Send Header
-	# oHana.sendMsg(jMessage)
+	# oHana.printMsg(jMessage)
+	oHana.sendMsg(jMessage)
 
 	while True:
 		# Gets the current date and time UTC format
-		dDate_UTC = oTimeDate.timeUTC()
+		dDate_UTC = oTimeDate.getUTC()
 
 		# Read Serial Port
 		jMessage = oArduino.serialReadJson(oConn)
-
 		# Add new info to the JSON 
 		aMessage = json.loads(jMessage)
+
+ 		aMessage[u'args'][0][u'messages'][0][u'index']     = iIndex
  		aMessage[u'args'][0][u'messages'][0][u'timestamp'] = dDate_UTC
-		aMessage[u'args'][0][u'index'] = iIndex
 
 		jMessage = json.dumps(aMessage)
 
 		print( jMessage )
 		print('\n')
 		# Send Message
-		# oHana.sendMsg(jMessage)
+		# oHana.printMsg(jMessage)
+		oHana.sendMsg(jMessage)
 
 		oTimeDate.delay( iSleep )
 	# Close
 	oArduino.serialCloseConn( oConn )
-	
