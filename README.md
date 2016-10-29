@@ -1,5 +1,7 @@
 # arduino.buhler.coffeeCloud
 
+![FromCoffeeToCloud](https://github.com/rbuhler/arduino.buhler.coffeeCloud/blob/master/%20pictures/coffeeBanner.jpeg)
+
 ## From Coffee to Cloud 
  <div style="text-align: justify;">
 
@@ -43,20 +45,6 @@ The support proposed implementation follows what is described next:
  - Choose **Services**;
  - Enable **Internet of Things**;
  - Choose **Go to Service**.
-
-Atrribute        | Value
------------------|---------------------
-Message Type     | _luminositySensor_ 
-Device Type      | _arduino_
-Device           | _uno_ 
-
-### Mesasage Fields
-Name | Type | Optional Settings
------| -----| -----------------
-sensor    | string  | Max. Length 255
-timestamp | date    | 
-value     | integer 
-
  </div>
  
  <div style="text-align: justify;">
