@@ -12,6 +12,13 @@ The use case is the monitoring of a coffee machine where a luminosity sensor kee
 
 For such an application it makes necessary the join of front end and backend software development together with an integration with hardware for collecting data from the _external world_. In a try to bring to this example more simplicity it was chosen the support of SAP cloud environment, the programming language Python and Arduino hardware compatible.
 
+### Design Thinking
+[Story Board](https://github.com/rbuhler/arduino.buhler.coffeeCloud/blob/master/designThinking/Story_%20Board_From_Coffee_to_Cloud.pdf)
+
+- [SAP Scenes](https://experience.sap.com/designservices/scenes)
+
+[Prototype](https://github.com/rbuhler/arduino.buhler.coffeeCloud/blob/master/designThinking/Prototype_From_Coffee_to_Cloud.pdf)
+
 ### Hana Cloud Platform
 Making use of the Hana Cloud infrastructure, more preciselly the Internet of Things (IoT) Service, it will be prepared an environment to receive and share data collected from a device.
 - [SAP Hana Cloud Platform Cockpit](https://account.hanatrial.ondemand.com)
