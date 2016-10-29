@@ -87,11 +87,13 @@ In order to create a new binding for the IoT service tables into the Hana XS inf
  - Choose **Start** pushbutton.
  
 </div>
-<div style="text-align: justify;">
+
 ### Arduino
 ![Arduino and Luminisity Sensor](https://github.com/rbuhler/arduino.buhler.coffeeCloud/blob/master/%20pictures/arduinoLuminisity.jpg)
-- [Sketch](https://github.com/rbuhler/arduino.buhler.coffeeCloud/blob/master/arduino/luminositySensor/luminositySensor.ino)
-- [Library ArduinoJson](https://github.com/bblanchon/ArduinoJson)
+
+[Sketch](https://github.com/rbuhler/arduino.buhler.coffeeCloud/blob/master/arduino/luminositySensor/luminositySensor.ino)
+
+[Library ArduinoJson](https://github.com/bblanchon/ArduinoJson)
 
 **JSON**
 ````
@@ -114,7 +116,36 @@ args:[{
 ### Python
 [Python - From Coffee to Cloud](https://github.com/rbuhler/arduino.buhler.coffeeCloud/tree/master/python)
 
- </div>
+**Algorithm**
+````
+BEGIN
+	read port
+	if read is FALSE
+		print "Error message"
+	
+	else
+		create JSON_Header
+		HTTPpost JSON_Header
+		loop
+			read port
+			adjust JSON_Message
+			HTTPPost JSON_Message
+			delay 3
+		endloop
+		
+	endif
+	
+END
+````
+
+### Real World
+
+#### Observation Tower 
+![Observation Tower](https://github.com/rbuhler/arduino.buhler.coffeeCloud/blob/master/%20pictures/observationTower.jpg)
+
+#### Cofee Machine
+![Coffee Machine](https://github.com/rbuhler/arduino.buhler.coffeeCloud/blob/master/%20pictures/coffeeMachine.jpg)
+
 ## More Info and Supporting Tools
 
 ### Source of information
