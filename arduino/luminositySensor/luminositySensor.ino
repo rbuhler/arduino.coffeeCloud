@@ -34,7 +34,7 @@ void loop()
 {
 
  iRead  = analogRead(iLumiSensor);   // Reads the Luminosity sensor
-
+ 
 // Step 1: Reserve memory space
   StaticJsonBuffer<400> jsonBuffer;
 

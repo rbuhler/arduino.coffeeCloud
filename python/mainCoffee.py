@@ -68,8 +68,8 @@ else:
 	print( jMessage )
 	print('\n')
 	# Send Header
-	# oHana.printMsg(jMessage)
-	oHana.sendMsg(jMessage)
+	oHana.printMsg(jMessage)
+	# oHana.sendMsg(jMessage)
 
 	while True:
 		# Gets the current date and time UTC format
@@ -88,8 +88,8 @@ else:
 		print( jMessage )
 		print('\n')
 		# Send Message
-		# oHana.printMsg(jMessage)
-		oHana.sendMsg(jMessage)
+		oHana.printMsg(jMessage)
+		# oHana.sendMsg(jMessage)
 
 		oTimeDate.delay( iSleep )
 	# Close
