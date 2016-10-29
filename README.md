@@ -18,18 +18,17 @@ Making use of the Hana Cloud infrastructure, more preciselly the Internet of Thi
 - [Help - SAP HANA Cloud Platform Internet of Things Services](https://help.hana.ondemand.com/iot/frameset.htm?ad829c660e584c329200022332f04d00.html)
 - [Youtube - Internet of Things (IoT) Services](https://www.youtube.com/playlist?list=PLkzo92owKnVxzjoxwJdaa400E_UqkzE8J)
 
-### Arduino and Python
-For the task of colleting data it will be used an Arduino board connected to a luminosity sensor. The reading is sent via serial port to a auxiliar device that's listening such port. The data is packed and sent to the cloud infrastructure.
+### Arduino
+For the task of colleting data it will be used an Arduino board connected to a luminosity sensor. 
 - [Arduino](https://www.arduino.cc/)
+
+### Python
+The reading is sent via serial port to a auxiliar device that's listening such port. The data is packed and sent to the cloud infrastructure.
 - [Python Software Foundation](https://www.python.org/)
 - [Python Object Oriented](https://www.tutorialspoint.com/python/pdf/python_classes_objects.pdf)
 - [Python Classes](https://docs.python.org/3/tutorial/classes.html)
 - [Python Switch Statement](https://pypi.python.org/pypi/switch/1.1.0)
 - [OS_flavor_name_version](https://github.com/hpcugent/easybuild/wiki/OS_flavor_name_version)
-
-### User Interface in HTML5 - UI5
-In the other side it makes necessary to provide a interface the final user may have access with the data collected and interact with. The choosen technology for that is HTML5 with the use of Open UI5 library for better results.
-- [Open UI5](http://openui5.org/)
  </div>
 
 ## Hands On
@@ -39,6 +38,8 @@ In order to handle the data collected by the hardware an infrastructure shall be
 The support proposed implementation follows what is described next:
 
 ### Internet of Things Services
+
+![IoTHana](https://github.com/rbuhler/arduino.buhler.coffeeCloud/blob/master/%20pictures/IoThana.png) 
 
 - Form the **SAP HANA Cloud Platform Cockpit** root;
 - Left Panel:
@@ -86,21 +87,39 @@ In order to create a new binding for the IoT service tables into the Hana XS inf
  - Choose **Start** pushbutton.
  
 </div>
-
-
+<div style="text-align: justify;">
 ### Arduino
-
-**References**
+![Arduino and Luminisity Sensor](https://github.com/rbuhler/arduino.buhler.coffeeCloud/blob/master/%20pictures/arduinoLuminisity.jpg)
+- [Sketch](https://github.com/rbuhler/arduino.buhler.coffeeCloud/blob/master/arduino/luminositySensor/luminositySensor.ino)
 - [Library ArduinoJson](https://github.com/bblanchon/ArduinoJson)
 
-<div style="text-align: justify;">
-[... under contruction]
- </div>
+**JSON**
+````
+args:[{
+	account,
+	device,
+	devToken,
+	messType,
+	proxy,
+	messages : [{ 
+			index, 
+			sensor, 
+			timestamp, 
+			value, 
+			user
+		}]
+	}]
+````
 
+### Python
+[Python - From Coffee to Cloud](https://github.com/rbuhler/arduino.buhler.coffeeCloud/tree/master/python)
+
+ </div>
 ## More Info and Supporting Tools
 
 ### Source of information
-[SAP GitHub - Open Source & SAP](http://sap.github.io/index.html?sort=asc&filter=featured)
+- [SAP GitHub - Open Source & SAP](http://sap.github.io/index.html?sort=asc&filter=featured)
+- [Open UI5](http://openui5.org/)
 
 ### Google Chrome add-on Postman
 [Chrome Web Store](https://www.google.com.br/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&sqi=2&ved=0ahUKEwiH-ejl9YrPAhXLIpAKHWpVDBkQFggoMAA&url=https%3A%2F%2Fchrome.google.com%2Fwebstore%2Fdetail%2Fpostman%2Ffhbjgbiflinjbdggehcddcbncdddomop%3Fhl%3Den&usg=AFQjCNE_Yq59TT1ZExzJ68FTldg4ho_lGw&sig2=s2A-KDOCEgGroyvXH0nKHA&bvm=bv.132479545,d.Y2I)
@@ -126,27 +145,5 @@ In order to create a new binding for the IoT service tables into the Hana XS inf
 }
 ````
 6. Click Send.
-
-Message Types
-
-	sensorHeader [7cfead179919a98cbed9]
-		index
-		sensor
-			date
-			time
-	
-	sensorLuminosity [56a55910fd4abd99f088]
-		index
-		sensor
-		timestamp
-			value
-			user
-
-Device type: coffeeMachine
-ID    [686c2b88de3953d81948]
-
-Device: Arduino
-ID    [1e4d608a-01c9-4060-b7b3-71e4b91e31a8]
-Token [1a81e19d91978bddfbeb3a6a3d45e25]
 
 Rodrigo Bühler
