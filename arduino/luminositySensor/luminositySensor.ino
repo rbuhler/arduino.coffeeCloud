@@ -4,11 +4,6 @@
 // Hardware Config
 int iLumiSensor=0;    //pin 0 : Luminosity sensor
 
-int iGreenLED=8;    //digital pin  8 : GrenLED
-int iYellowLED=9;   //digital pin  9 : YellowLED
-int iRedLED=10;     //digital pin 13 : RedLED
-
-int iLimit = 100;
 // JSON header message
 String sAccount;
 String sDevice;
@@ -23,14 +18,6 @@ int iRead;
 void setup()
 {
 Serial.begin(9600); //serial port speed : 9600bps(baud).
-
-  pinMode(iGreenLED, OUTPUT);    //pin setup as digital output
-  pinMode(iYellowLED, OUTPUT);   //pin setup as digital output
-  pinMode(iRedLED, OUTPUT);      //pin setup as digital output
- 
-  digitalWrite(iGreenLED, LOW);  //LED switched off
-  digitalWrite(iYellowLED, LOW); //LED switched off
-  digitalWrite(iRedLED, LOW);    //LED switched off
 
   sAccount  = "p1941020166trial";
   sDevice   = "1e4d608a-01c9-4060-b7b3-71e4b91e31a8";
@@ -76,19 +63,4 @@ void loop()
 // Step 3: Generate the JSON string
   jArgs.printTo(Serial);
 
-  if (iRead < iLimit) { 
-    digitalWrite(iGreenLED, HIGH);
-    digitalWrite(iYellowLED, LOW);
-    digitalWrite(iRedLED, LOW);
-  }
-  if(iRead <= iLimit) {
-    digitalWrite(iGreenLED, HIGH);
-    digitalWrite(iYellowLED, HIGH);
-    digitalWrite(iRedLED, LOW); 
-  }
-  if(iRead > iLimit) {
-    digitalWrite(iGreenLED, HIGH);
-    digitalWrite(iYellowLED, HIGH);
-    digitalWrite(iRedLED, HIGH); 
-  }
 }
