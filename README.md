@@ -60,6 +60,9 @@ In order to create a new binding for the IoT service tables into the Hana XS inf
  - Pushbutton **New**;
  - Inform a **Database ID**;
  - Choose **Database System:** HANA MDC;
+ - Enter **Password**;
+ - Repeat **Password**;
+ _(notice that the user is SYSTEM)_
  - Choose **Save**.
 
 - Form the **SAP HANA Cloud Platform Cockpit** root;
