@@ -16,16 +16,15 @@
 (https://iotmmsp1941020166trial.hanatrial.ondemand.com/com.sap.iotservices.mms/)
 
 ## IoT Service
-
-a. sAccount    = "p1941020166trial";
-b. sDevice     = "1e4d608a-01c9-4060-b7b3-71e4b91e31a8"; (Arduino)
-c. sToken      = "1a81e19d91978bddfbeb3a6a3d45e25";
-
-d. sMsgType    = "56a55910fd4abd99f088"; (sensorLuminosity)
-e. sMsgType    = "7cfead179919a98cbed9"; (sensorHeader)
-
-f. sDeviceType = "686c2b88de3953d81948"; (coffeeMachine)
-g. OAuth       = "3c5139d3f08e7bbf7ece190fbd7a26a";
+| Key | Data| Obs |
+|-----|-----|-----| 
+| sAccount    | "p1941020166trial" | |
+| sDevice     | "1e4d608a-01c9-4060-b7b3-71e4b91e31a8"   | Arduino |
+| sToken      | "1a81e19d91978bddfbeb3a6a3d45e25"        | |
+| sMsgType    | "56a55910fd4abd99f088"                   | sensorLuminosity |
+| sMsgType    | "7cfead179919a98cbed9"                   | sensorHeader |
+| sDeviceType | "686c2b88de3953d81948"                   | coffeeMachine | 
+| OAuth       | "3c5139d3f08e7bbf7ece190fbd7a26a"        | |
 
 ## OData sintax
 
@@ -37,7 +36,7 @@ https://iotmmsp1941020166trial.hanatrial.ondemand.com/com.sap.iotservices.mms/v1
 
 https://iotmmsp1941020166trial.hanatrial.ondemand.com/com.sap.iotservices.mms/v1/api/http/app.svc/NEO_1PI6OECY8GIGSO4N81ITA138M.T_IOT_56A55910FD4ABD99F088
 
-**TOP***
+**TOP**
 
 https://iotmmsp1941020166trial.hanatrial.ondemand.com/com.sap.iotservices.mms/v1/api/http/app.svc/NEO_1PI6OECY8GIGSO4N81ITA138M.T_IOT_56A55910FD4ABD99F088?$top=1
 
