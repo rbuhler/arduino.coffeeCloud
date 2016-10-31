@@ -4,9 +4,6 @@ import json
 
 sys.path.append('lib')
 
-# Header message
-sMsgTypeHeader = 'c83b412a80222cbf1708'
-
 # DEVICE IDENTIFICATION
 sAccount   = ''
 sDevice    = ''
@@ -46,7 +43,10 @@ else:
 	jMessage = oArduino.serialReadJson(oConn)
 	# Add new info to the JSON 
 	aMessage = json.loads(jMessage)
-
+	
+	# Header message
+	sMsgTypeHeader = '7cfead179919a98cbed9'
+	# Message Data
 	iIndex  = oTimeDate.getUTC()
 	sSensor = aMessage[u'args'][0][u'messages'][0][u'sensor']
 	dDate   = oTimeDate.getDate()
@@ -57,7 +57,7 @@ else:
 		'account'  : aMessage[u'args'][0][u'account'],
 		'device'   : aMessage[u'args'][0][u'device'],
 		'devToken' : aMessage[u'args'][0][u'devToken'],
-		'messType' : '7cfead179919a98cbed9',
+		'messType' : sMsgTypeHeader,
 		'proxy'    : aMessage[u'args'][0][u'proxy'],
 		'messages' :[{'index':iIndex, 'sensor':sSensor, 'date':dDate, 'time':tTime }]
 		}]
@@ -68,8 +68,8 @@ else:
 	print( jMessage )
 	print('\n')
 	# Send Header
-	oHana.printMsg(jMessage)
-	# oHana.sendMsg(jMessage)
+	# oHana.printMsg(jMessage)
+	oHana.sendMsg(jMessage)
 
 	while True:
 		# Gets the current date and time UTC format
@@ -88,8 +88,8 @@ else:
 		print( jMessage )
 		print('\n')
 		# Send Message
-		oHana.printMsg(jMessage)
-		# oHana.sendMsg(jMessage)
+		# oHana.printMsg(jMessage)
+		oHana.sendMsg(jMessage)
 
 		oTimeDate.delay( iSleep )
 	# Close
