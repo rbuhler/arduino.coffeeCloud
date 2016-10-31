@@ -31,18 +31,27 @@
 **Metadata**
 
 https://iotmmsp1941020166trial.hanatrial.ondemand.com/com.sap.iotservices.mms/v1/api/http/app.svc/$metadata
+### HEADER
+1. COMPLETE LIST
+https://iotmmsp1941020166trial.hanatrial.ondemand.com/com.sap.iotservices.mms/v1/api/http/app.svc/NEO_1PI6OECY8GIGSO4N81ITA138M.T_IOT_7CFEAD179919A98CBED9?$format=json
 
-**DATA**
+2. FILTER BY DATE
+https://iotmmsp1941020166trial.hanatrial.ondemand.com/com.sap.iotservices.mms/v1/api/http/app.svc/NEO_1PI6OECY8GIGSO4N81ITA138M.T_IOT_7CFEAD179919A98CBED9?$filter=C_DATE%20eq%20%2728/10/2016%27&$format=json
 
-https://iotmmsp1941020166trial.hanatrial.ondemand.com/com.sap.iotservices.mms/v1/api/http/app.svc/NEO_1PI6OECY8GIGSO4N81ITA138M.T_IOT_56A55910FD4ABD99F088
 
-**TOP**
+### READINGS
+1. COMPLETE LIST
+https://iotmmsp1941020166trial.hanatrial.ondemand.com/com.sap.iotservices.mms/v1/api/http/app.svc/NEO_1PI6OECY8GIGSO4N81ITA138M.T_IOT_56A55910FD4ABD99F088?$select=C_INDEX&$format=json
 
-https://iotmmsp1941020166trial.hanatrial.ondemand.com/com.sap.iotservices.mms/v1/api/http/app.svc/NEO_1PI6OECY8GIGSO4N81ITA138M.T_IOT_56A55910FD4ABD99F088?$top=1
+2. FILTER BY INDEX
+https://iotmmsp1941020166trial.hanatrial.ondemand.com/com.sap.iotservices.mms/v1/api/http/app.svc/NEO_1PI6OECY8GIGSO4N81ITA138M.T_IOT_56A55910FD4ABD99F088?$filter=C_INDEX%20eq%201477617795&$format=json
 
-**JSON**
+### Source:
+https://msdn.microsoft.com/en-us/library/gg309461(v=crm.7).aspx#BKMK_filter
 
-https://iotmmsp1941020166trial.hanatrial.ondemand.com/com.sap.iotservices.mms/v1/api/http/app.svc/NEO_1PI6OECY8GIGSO4N81ITA138M.T_IOT_56A55910FD4ABD99F088?$top=1&$format=json
+http://www.odata.org/documentation/odata-version-2-0/uri-conventions/
+
+https://www.asp.net/web-api/overview/odata-support-in-aspnet-web-api/using-select-expand-and-value
 
 ## Postman Rest Client
 0. Enter the device ID at the end of the URL;
