@@ -48,18 +48,18 @@
 https://iotmmsp1942282297trial.hanatrial.ondemand.com/com.sap.iotservices.mms/v1/api/http/app.svc/$metadata
 ### HEADER
 1. COMPLETE LIST
-https://iotmmsp1942282297trial.hanatrial.ondemand.com/com.sap.iotservices.mms/v1/api/http/app.svc/NEO_1PI6OECY8GIGSO4N81ITA138M.T_IOT_a1f391674bec8ba68277?$format=json
+https://iotmmsp1942282297trial.hanatrial.ondemand.com/com.sap.iotservices.mms/v1/api/http/app.svc/NEO_1PI6OECY8GIGSO4N81ITA138M.T_IOT_A1F391674BEC8BA68277?$format=json
 
 2. FILTER BY DATE
-https://iotmmsp1942282297trial.hanatrial.ondemand.com/com.sap.iotservices.mms/v1/api/http/app.svc/NEO_1PI6OECY8GIGSO4N81ITA138M.T_IOT_a1f391674bec8ba68277?$filter=C_DATE%20eq%20%2701/11/2016%27&$format=json
+https://iotmmsp1942282297trial.hanatrial.ondemand.com/com.sap.iotservices.mms/v1/api/http/app.svc/NEO_1PI6OECY8GIGSO4N81ITA138M.T_IOT_A1F391674BEC8BA68277?$filter=C_DATE%20eq%20%2701/11/2016%27&$format=json
 
 
 ### READINGS
 1. COMPLETE LIST
-https://iotmmsp1942282297trial.hanatrial.ondemand.com/com.sap.iotservices.mms/v1/api/http/app.svc/NEO_1PI6OECY8GIGSO4N81ITA138M.T_IOT_70e9ae6a70c545c342e8?$select=C_INDEX&$format=json
+https://iotmmsp1942282297trial.hanatrial.ondemand.com/com.sap.iotservices.mms/v1/api/http/app.svc/NEO_1PI6OECY8GIGSO4N81ITA138M.T_IOT_70E9AE6A70C545C342E8?$select=C_INDEX&$format=json
 
 2. FILTER BY INDEX
-https://iotmmsp1942282297trial.hanatrial.ondemand.com/com.sap.iotservices.mms/v1/api/http/app.svc/NEO_1PI6OECY8GIGSO4N81ITA138M.T_IOT_70e9ae6a70c545c342e8?$filter=C_INDEX%20eq%201477617795&$format=json
+https://iotmmsp1942282297trial.hanatrial.ondemand.com/com.sap.iotservices.mms/v1/api/http/app.svc/NEO_1PI6OECY8GIGSO4N81ITA138M.T_IOT_70E9AE6A70C545C342E8?$filter=C_INDEX%20eq%201477617795&$format=json
 
 ### Source:
 https://msdn.microsoft.com/en-us/library/gg309461(v=crm.7).aspx#BKMK_filter
