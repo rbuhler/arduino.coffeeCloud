@@ -19,10 +19,10 @@ void setup()
 {
 Serial.begin(9600); //serial port speed : 9600bps(baud).
 
-  sAccount  = "p1941020166trial";
-  sDevice   = "1e4d608a-01c9-4060-b7b3-71e4b91e31a8";
-  sToken    = "1a81e19d91978bddfbeb3a6a3d45e25";
-  sMsgType  = "56a55910fd4abd99f088";
+  sAccount  = "p1942282297trial";
+  sDevice   = "4fd19277-4cfe-4377-9d00-dd5ca8740a44";
+  sToken    = "2d879287145519929e12402e378660";
+  sMsgType  = "70e9ae6a70c545c342e8";
   sProxy    = "";
   iUser     = 0x0;
 
