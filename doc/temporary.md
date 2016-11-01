@@ -15,7 +15,7 @@
 [Message Management Service Cockpit]
 (https://iotmmsp1941020166trial.hanatrial.ondemand.com/com.sap.iotservices.mms/)
 
-## IoT Service
+## IoT Service (rodrigo.buhler@ymail.com)
 | Key | Data| Obs |
 |-----|-----|-----| 
 | sAccount    | "p1941020166trial" | |
@@ -25,6 +25,21 @@
 | sMsgType    | "7cfead179919a98cbed9"                   | sensorHeader |
 | sDeviceType | "686c2b88de3953d81948"                   | coffeeMachine | 
 | OAuth       | "3c5139d3f08e7bbf7ece190fbd7a26a"        | |
+
+## IoT Service (share.buhler@gmail.com)
+| Key | Data| Obs |
+|-----|-----|-----| 
+| sAccount    | "p1942282297trial"                       | |
+| sDevice     | "4fd19277-4cfe-4377-9d00-dd5ca8740a44"   | Arduino |
+| sToken      | "2d879287145519929e12402e378660"         | |
+| sMsgType    | "70e9ae6a70c545c342e8"                   | sensorLuminosity |
+| sMsgType    | "a1f391674bec8ba68277"                   | sensorHeader |
+| sDeviceType | "67ef61393837bb7e700b"                   | coffeeMachine | 
+| OAuth       | "d4a2926a993d4bada63df11fbc4e3ee"
+
+[IoT Cockpit](https://iotcockpitiotservices-p1942282297trial.hanatrial.ondemand.com/com.sap.iotservices.cockpit)
+
+[Messages Cockpit](https://iotmmsp1942282297trial.hanatrial.ondemand.com/com.sap.iotservices.mms/)
 
 ## OData sintax
 
