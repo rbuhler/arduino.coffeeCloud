@@ -53,6 +53,8 @@ http://www.odata.org/documentation/odata-version-2-0/uri-conventions/
 
 https://www.asp.net/web-api/overview/odata-support-in-aspnet-web-api/using-select-expand-and-value
 
+http://go.sap.com/developer/tutorials/iot-part10-hcp-services-hanaxs.html
+
 ## Postman Rest Client
 0. Enter the device ID at the end of the URL;
 1. Authorization: OAuth2;
