@@ -1,6 +1,3 @@
 #Hana Iot
 ##Internet of Things Platform
-[Hana Cloud Platform/cockpit/services/Internet of Things Platform](https://account.hanatrial.ondemand.com/cockpit#/acc/p1941020166trial/service/iot/overview)
-- Go to Service
-- Configure Internet of Things Services;
-- 
+[Service Schema](https://creately.com/diagram/iz8hfg8z2/dWWsUy5v4oC951eTWcVuxNHLhU%3D)
