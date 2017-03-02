@@ -188,3 +188,7 @@ END
 6. Click Send.
 
 Rodrigo Bühler
+- About Myself
+ - [At SAP Community](https://people.sap.com/rbuhler)
+ - [At LinkedIn](https://www.linkedin.com/in/rodrigobuhler/)
+ 
